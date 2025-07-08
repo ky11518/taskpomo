@@ -48,6 +48,7 @@ namespace TaskPomo.Core.Timer
 
         public override void Start()
         {
+            System.Console.WriteLine($"[DEBUG] Start called. Phase: {_currentPhase}, Remaining: {_remainingSeconds}");
             if (_remainingSeconds > 0)
             {
                 StartTimer();
@@ -106,6 +107,7 @@ namespace TaskPomo.Core.Timer
                     
                 case PomodoroPhase.ShortBreak:
                 case PomodoroPhase.LongBreak:
+                    System.Console.WriteLine($"[DEBUG] Break completed. Sessions: {_completedWorkSessions} -> Work");
                     _currentPhase = PomodoroPhase.Work;
                     break;
             }
