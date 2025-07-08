@@ -83,6 +83,7 @@ namespace TaskPomo.Core.Timer
                 if (_remainingSeconds <= 0)
                 {
                     CompletePhase();
+                    return; // CompletePhase後はbase.OnTimerTick()を呼ばない
                 }
             }
             base.OnTimerTick();
