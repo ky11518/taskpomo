@@ -66,5 +66,15 @@ namespace TaskPomo.Tests
             // Assert
             timer.IsRunning.Should().BeFalse();
         }
+
+        [Test]
+        public void 新しいタイマーの経過時間は0秒である()
+        {
+            // Arrange & Act
+            var timer = new BasicTimer();
+
+            // Assert
+            timer.ElapsedSeconds.Should().Be(0);
+        }
     }
 }
