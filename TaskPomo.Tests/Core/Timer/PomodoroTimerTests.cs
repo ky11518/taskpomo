@@ -176,15 +176,3 @@ namespace TaskPomo.Tests.Core.Timer
     }
 }
 
-namespace TaskPomo.Core.Timer
-{
-    /// <summary>
-    /// ポモドーロフェーズ
-    /// </summary>
-    public enum PomodoroPhase
-    {
-        Work,
-        ShortBreak,
-        LongBreak
-    }
-}

@@ -7,13 +7,13 @@ namespace TaskPomo.Core.Timer
     /// </summary>
     public class TimerManager : IDisposable
     {
-        private TimerBase _currentTimer;
+        private TimerBase? _currentTimer;
         private TimerMode _currentMode;
         private bool _disposed;
 
-        public event EventHandler<TimerEventArgs> TimerTick;
-        public event EventHandler<TimerEventArgs> TimerCompleted;
-        public event EventHandler<TimerModeChangedEventArgs> TimerModeChanged;
+        public event EventHandler<TimerEventArgs>? TimerTick;
+        public event EventHandler<TimerEventArgs>? TimerCompleted;
+        public event EventHandler<TimerModeChangedEventArgs>? TimerModeChanged;
 
         public TimerMode CurrentMode => _currentMode;
         public bool IsRunning => _currentTimer?.IsRunning ?? false;
@@ -105,12 +105,12 @@ namespace TaskPomo.Core.Timer
             return _currentTimer is PomodoroTimer pomodoro ? pomodoro.CurrentPhase : PomodoroPhase.Work;
         }
 
-        private void OnTimerTick(object sender, TimerEventArgs e)
+        private void OnTimerTick(object? sender, TimerEventArgs e)
         {
             TimerTick?.Invoke(sender, e);
         }
 
-        private void OnTimerCompleted(object sender, TimerEventArgs e)
+        private void OnTimerCompleted(object? sender, TimerEventArgs e)
         {
             TimerCompleted?.Invoke(sender, e);
         }

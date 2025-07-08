@@ -16,7 +16,7 @@ namespace TaskPomo.Core.Timer
         private PomodoroPhase _currentPhase;
         private int _completedWorkSessions;
 
-        public event EventHandler<PhaseCompletedEventArgs> PhaseCompleted;
+        public event EventHandler<PhaseCompletedEventArgs>? PhaseCompleted;
 
         public PomodoroPhase CurrentPhase => _currentPhase;
         public int CompletedWorkSessions => _completedWorkSessions;

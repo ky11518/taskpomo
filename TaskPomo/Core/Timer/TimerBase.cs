@@ -11,8 +11,8 @@ namespace TaskPomo.Core.Timer
         protected bool _isRunning;
         protected bool _disposed;
 
-        public event EventHandler<TimerEventArgs> TimerTick;
-        public event EventHandler<TimerEventArgs> TimerCompleted;
+        public event EventHandler<TimerEventArgs>? TimerTick;
+        public event EventHandler<TimerEventArgs>? TimerCompleted;
 
         public bool IsRunning => _isRunning;
 
@@ -27,7 +27,7 @@ namespace TaskPomo.Core.Timer
         public abstract void Reset();
         public abstract string GetDisplayTime();
 
-        private void OnTimerElapsed(object sender, System.Timers.ElapsedEventArgs e)
+        private void OnTimerElapsed(object? sender, System.Timers.ElapsedEventArgs e)
         {
             OnTimerTick();
         }
