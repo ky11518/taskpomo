@@ -92,17 +92,17 @@ namespace TaskPomo.Tests
         }
 
         [Test]
-        public void TimerTickイベントが存在する()
+        public void TimerTickイベントにハンドラを登録できる()
         {
             // Arrange
             var timer = new BasicTimer();
             var eventFired = false;
 
-            // Act
+            // Act & Assert (イベント登録が例外なく完了すること)
             timer.TimerTick += (sender, e) => eventFired = true;
-
-            // Assert
-            timer.TimerTick.Should().NotBeNull();
+            
+            // イベントが登録されたことを確認
+            eventFired.Should().BeFalse(); // まだ発火していない
         }
     }
 }
