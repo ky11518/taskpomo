@@ -104,5 +104,19 @@ namespace TaskPomo.Tests
             // イベントが登録されたことを確認
             eventFired.Should().BeFalse(); // まだ発火していない
         }
+
+        [Test]
+        public void TimerCompletedイベントにハンドラを登録できる()
+        {
+            // Arrange
+            var timer = new BasicTimer();
+            var eventFired = false;
+
+            // Act & Assert (イベント登録が例外なく完了すること)
+            timer.TimerCompleted += (sender, e) => eventFired = true;
+            
+            // イベントが登録されたことを確認
+            eventFired.Should().BeFalse(); // まだ発火していない
+        }
     }
 }
