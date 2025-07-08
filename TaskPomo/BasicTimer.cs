@@ -13,5 +13,10 @@ namespace TaskPomo
         {
             IsRunning = false;
         }
+
+        public void Reset()
+        {
+            IsRunning = false;
+        }
     }
 }
