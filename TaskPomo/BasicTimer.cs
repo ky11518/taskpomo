@@ -8,5 +8,10 @@ namespace TaskPomo
         {
             IsRunning = true;
         }
+
+        public void Stop()
+        {
+            IsRunning = false;
+        }
     }
 }
