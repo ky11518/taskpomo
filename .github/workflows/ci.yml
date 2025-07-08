@@ -51,7 +51,7 @@ jobs:
       run: dotnet restore TaskPomo/TaskPomo.csproj
     
     - name: Publish
-      run: dotnet publish TaskPomo/TaskPomo.csproj -c Release -r win-x64 --self-contained true --single-file -o ./publish
+      run: dotnet publish TaskPomo/TaskPomo.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ./publish
     
     - name: Create Release
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
