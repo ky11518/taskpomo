@@ -8,6 +8,7 @@ namespace TaskPomo
         public int ElapsedSeconds { get; private set; } = 0;
         
         public event EventHandler<EventArgs>? TimerTick;
+        public event EventHandler<EventArgs>? TimerCompleted;
 
         public void Start()
         {
