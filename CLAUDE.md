@@ -2,6 +2,10 @@
 
 必ず日本語で回答してください。
 
+t-wadaのTDD手法で進めること。
+
+CI/CDを構築しながら実装を進めること。
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
