@@ -5,7 +5,6 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
     <StartupObject>TaskPomo.App</StartupObject>
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
@@ -17,8 +16,5 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="Properties\icon.ico" />
-  </ItemGroup>
 
 </Project>
