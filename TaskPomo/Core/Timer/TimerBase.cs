@@ -54,7 +54,7 @@ namespace TaskPomo.Core.Timer
                 if (disposing)
                 {
                     _timer?.Stop();
-                    _timer?.Dispose();
+                    _timer = null;
                 }
                 _disposed = true;
             }
