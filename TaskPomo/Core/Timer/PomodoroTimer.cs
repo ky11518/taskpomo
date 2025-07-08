@@ -130,6 +130,7 @@ namespace TaskPomo.Core.Timer
                 PomodoroPhase.LongBreak => _longBreakMinutes * 60,
                 _ => _workDurationMinutes * 60
             };
+            System.Console.WriteLine($"[DEBUG] SetPhaseTime: {_currentPhase} -> {_remainingSeconds} seconds");
         }
 
         private void OnPhaseCompleted(PomodoroPhase fromPhase, PomodoroPhase toPhase)
