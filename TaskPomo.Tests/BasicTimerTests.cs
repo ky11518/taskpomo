@@ -90,5 +90,19 @@ namespace TaskPomo.Tests
             // Assert
             timer.ElapsedSeconds.Should().Be(0);
         }
+
+        [Test]
+        public void TimerTickイベントが存在する()
+        {
+            // Arrange
+            var timer = new BasicTimer();
+            var eventFired = false;
+
+            // Act
+            timer.TimerTick += (sender, e) => eventFired = true;
+
+            // Assert
+            timer.TimerTick.Should().NotBeNull();
+        }
     }
 }
