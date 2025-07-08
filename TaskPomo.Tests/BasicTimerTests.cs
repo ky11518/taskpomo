@@ -76,5 +76,19 @@ namespace TaskPomo.Tests
             // Assert
             timer.ElapsedSeconds.Should().Be(0);
         }
+
+        [Test]
+        public void Reset実行後は経過時間が0秒にリセットされる()
+        {
+            // Arrange
+            var timer = new BasicTimer();
+            timer.Start();
+
+            // Act
+            timer.Reset();
+
+            // Assert
+            timer.ElapsedSeconds.Should().Be(0);
+        }
     }
 }

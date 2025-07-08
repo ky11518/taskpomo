@@ -18,6 +18,7 @@ namespace TaskPomo
         public void Reset()
         {
             IsRunning = false;
+            ElapsedSeconds = 0;
         }
     }
 }
