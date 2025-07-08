@@ -15,5 +15,15 @@ namespace TaskPomo.Tests
             // Assert
             timer.Should().NotBeNull();
         }
+
+        [Test]
+        public void 新しいタイマーは停止状態である()
+        {
+            // Arrange & Act
+            var timer = new BasicTimer();
+
+            // Assert
+            timer.IsRunning.Should().BeFalse();
+        }
     }
 }
