@@ -99,6 +99,8 @@ namespace TaskPomo.Core.Timer
             {
                 case PomodoroPhase.Work:
                     _completedWorkSessions++;
+                    // TDD Debug: ログ出力
+                    System.Console.WriteLine($"[DEBUG] Work completed. Sessions: {_completedWorkSessions}, Interval: {_longBreakInterval}, ShouldTakeLongBreak: {ShouldTakeLongBreak()}");
                     _currentPhase = ShouldTakeLongBreak() ? PomodoroPhase.LongBreak : PomodoroPhase.ShortBreak;
                     break;
                     
