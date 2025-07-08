@@ -52,5 +52,19 @@ namespace TaskPomo.Tests
             // Assert
             timer.IsRunning.Should().BeFalse();
         }
+
+        [Test]
+        public void Reset実行後は停止状態になる()
+        {
+            // Arrange
+            var timer = new BasicTimer();
+            timer.Start();
+
+            // Act
+            timer.Reset();
+
+            // Assert
+            timer.IsRunning.Should().BeFalse();
+        }
     }
 }
