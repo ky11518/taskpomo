@@ -2,28 +2,30 @@ using System;
 
 namespace TaskPomo
 {
-    public class BasicTimer
+    public class BasicTimer : TimerBase
     {
-        public bool IsRunning { get; private set; } = false;
-        public int ElapsedSeconds { get; private set; } = 0;
+        public override int ElapsedSeconds { get; protected set; } = 0;
         
         public event EventHandler<EventArgs>? TimerTick;
-        public event EventHandler<EventArgs>? TimerCompleted;
 
-        public void Start()
+        protected override void OnStart()
         {
-            IsRunning = true;
+            // BasicTimerでは特別な開始処理なし
         }
 
-        public void Stop()
+        protected override void OnStop()
         {
-            IsRunning = false;
+            // BasicTimerでは特別な停止処理なし
         }
 
-        public void Reset()
+        protected override void OnReset()
         {
-            IsRunning = false;
             ElapsedSeconds = 0;
+        }
+
+        protected override void OnTimerTick(object? state)
+        {
+            // BasicTimerでは特別なティック処理なし
         }
     }
 }
